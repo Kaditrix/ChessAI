@@ -1,0 +1,14 @@
+while board.turn == chess.BLACK:
+        str1 = str(board.legal_moves)
+        str2 = str("")
+        moveList = list("")
+        list1 = str('')
+        for i in range(0,len(str1)-2):
+                if i >= 38:
+                    if str1[i] != "(" and str1[i] != " ":
+                        if str1[i] != "," and str1[i] != ")":
+                            list1 = list1 + str1[i]
+                        else:
+                            moveList.append(list1)
+                            list1 = str('')
+    board.push_san(moveList[random.randint(0,len(moveList) - 1)])
